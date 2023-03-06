@@ -35,18 +35,18 @@ with st.sidebar:
     )
 
     
-def openai(description):
-    reply = openai.Completion.create(
-                                        engine="text-davinci-003",
-                                        prompt=inpt,
-                                        max_tokens=3600,
-                                        n=1,
-                                        stop=None,
-                                        temperature=0.5,
-                                        )
-    explan= reply.choices[0].text.strip()
-    st.stop()
-    return explan
+# def openai(description):
+#     reply = openai.Completion.create(
+#                                         engine="text-davinci-003",
+#                                         prompt=inpt,
+#                                         max_tokens=3600,
+#                                         n=1,
+#                                         stop=None,
+#                                         temperature=0.5,
+#                                         )
+#     explan= reply.choices[0].text.strip()
+#     st.stop()
+#     return explan
 
  
     
@@ -69,9 +69,8 @@ if choose == "Write For Me":
     with col1:
         st.subheader('Write for me')
         des=st.text_area(label='Description')
-        submitted = st.button('Submit')
-    with col2:
-        if submitted:
+        if st.button('Submit'):
+
             reply = openai.Completion.create(
                                         engine="text-davinci-003",
                                         prompt=des,
@@ -80,9 +79,10 @@ if choose == "Write For Me":
                                         stop=None,
                                         temperature=0.5,
                                         )
-            explan= reply.choices[0].text.strip()
-            st.stop()
-            st.code(explan)
+                                        st.stop()
+    with col2:
+        explan= reply.choices[0].text.strip()
+        st.code(explan)
             # st.stop()
                 
 elif choose == "Idea Generator":
