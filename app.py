@@ -81,7 +81,11 @@ if choose == "Write For Me":
             explan= reply.choices[0].text.strip()
             # st.code(explan)
     with col2:
-        explan= reply.choices[0].text.strip()
+        try:
+            explan= reply.choices[0].text.strip()
+            st.code(explan)
+        except:
+            st.code("Inpu something and click submit")
         st.code(explan)
             # st.stop()
                 
