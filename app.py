@@ -87,11 +87,10 @@ if choose == "Write For Me":
 
         with st.form(key="form"):
             st.subheader('Write for me')
-            des=st.text_input(label='Description') 
-    with col2:
+            des=st.text_input(label='Description')
+            submitted = st.form_submit_button('Submit')
 
-        # para=st.text_input(label='Parameter') 
-        submitted = st.form_submit_button('Submit')
+    with col2:
         if submitted:
             x = openai(des)
             st.code(x)
