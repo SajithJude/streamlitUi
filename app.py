@@ -81,12 +81,12 @@ if choose == "Write For Me":
             explan= reply.choices[0].text.strip()
             # st.code(explan)
     with col2:
+        st.subheader('Generated OutPuts')
+
         try:
-            st.subheader('Generated OutPuts')
             explan= reply.choices[0].text.strip()
             st.code(explan)
         except:
-            st.subheader('Generated OutPuts')
             st.code("Input something and click submit")
         # st.code(explan)
             # st.stop()
