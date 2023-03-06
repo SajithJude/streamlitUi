@@ -95,8 +95,10 @@ elif choose == "Idea Generator":
     with col1:
 
         st.subheader('Idea Generator')
+        src = st.text_input("source Link")
         des=st.text_area(label='Description',label_visibility='collapsed' )
         if st.button('Submit'):
+            prompt = str(des) + " " + " Response should be based from this source :" + str(src)
             reply = openai.Completion.create(
                                         engine="text-davinci-003",
                                         prompt=des,
