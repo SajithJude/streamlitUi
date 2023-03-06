@@ -74,7 +74,7 @@ if choose == "Write For Me":
         if submitted:
             reply = openai.Completion.create(
                                         engine="text-davinci-003",
-                                        prompt=inpt,
+                                        prompt=des,
                                         max_tokens=3600,
                                         n=1,
                                         stop=None,
