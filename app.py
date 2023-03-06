@@ -89,7 +89,7 @@ if choose == "Write For Me":
         except:
             st.code("Input something and click submit")
         # st.code(explan)
-            st.stop()
+            # st.stop()
                 
 elif choose == "Idea Generator":
     with col1:
@@ -116,7 +116,7 @@ elif choose == "Idea Generator":
         except:
             st.code("Input something and click submit")
         # st.code(explan)
-            st.stop()
+# st.stop()
 
 
 elif choose == "Promotion Ideas":
@@ -142,34 +142,3 @@ elif choose == "Promotion Ideas":
             st.code(explan)
         except:
             st.code("Input something and click submit")
-
-#     elif choose == "Idea Generator":
-#         with st.form(key="form2"):
-#             st.subheader('Idea Generator')
-#             des2=st.text_input(label='Description') 
-#             para2=st.text_input(label='Parameter') 
-#             submitted = st.form_submit_button('Submit')
-#             if submitted:
-#                 x = openai(des2)
-#                 # if "x" not in st.session_state:
-#                 st.session_state['x_result'] = x
-
-
-
-#     elif choose == "Promotion Ideas":
-#         with st.form(key="form2"):
-#             st.subheader('Promotion Ideas')
-#             des3=st.text_input(label='Description') 
-#             # para2=st.text_input(label='Parameter') 
-#             submitted = st.form_submit_button('Submit')
-#             if submitted:
-#                 x = openai(des2)
-#                 # if "x" not in st.session_state:
-#                 st.session_state['x_result'] = x
-
-
-
-# with col2:
-#     with st.container():
-#         # if x is not None:
-#         st.code(st.session_state['x'])
