@@ -70,7 +70,6 @@ if choose == "Write For Me":
         st.subheader('Write for me')
         des=st.text_area(label='Description')
         if st.button('Submit'):
-
             reply = openai.Completion.create(
                                         engine="text-davinci-003",
                                         prompt=des,
@@ -79,7 +78,7 @@ if choose == "Write For Me":
                                         stop=None,
                                         temperature=0.5,
                                         )
-                                        st.stop()
+            st.stop()
     with col2:
         explan= reply.choices[0].text.strip()
         st.code(explan)
