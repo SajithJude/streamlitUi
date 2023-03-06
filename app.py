@@ -78,6 +78,7 @@ if choose == "Write For Me":
                                         stop=None,
                                         temperature=0.5,
                                         )
+            explan= reply.choices[0].text.strip()
             st.stop()
     with col2:
         explan= reply.choices[0].text.strip()
