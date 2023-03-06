@@ -9,24 +9,7 @@ import os
 openai.api_key =  os.getenv("APIKEY")
 st.set_page_config(page_title="My App", page_icon=":rocket:", layout="wide",initial_sidebar_state="expanded"  )
 
-
-# def add_bg_from_local(image_file):
-#     with open(image_file, "rb") as image_file:
-#         encoded_string = base64.b64encode(image_file.read())
-#     st.markdown(
-#     f"""
-#     <style>
-#     .stApp {{
-#         background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-#         background-size: cover;
-#         background-position: 20% center;
-        
-#     }}
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-#     )
-# add_bg_from_local('image.jpg')   
+   
 with st.sidebar:
     choose = option_menu("App Gallery", ["Write For Me", "Idea Generator", "Promotion Ideas", "Account", "Log Out"],
                          icons=['cpu', 'lightbulb fill', 'bar-chart fill', 'book','person dash'],
@@ -89,9 +72,18 @@ if choose == "Write For Me":
         submitted = st.button('Submit')
     with col2:
         if submitted:
-            x = openai(des)
-            st.code(x)
+            reply = openai.Completion.create(
+                                        engine="text-davinci-003",
+                                        prompt=inpt,
+                                        max_tokens=3600,
+                                        n=1,
+                                        stop=None,
+                                        temperature=0.5,
+                                        )
+            explan= reply.choices[0].text.strip()
             st.stop()
+            st.code(explan)
+            # st.stop()
                 
 elif choose == "Idea Generator":
     with col1:
