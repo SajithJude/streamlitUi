@@ -86,21 +86,24 @@ if choose == "Write For Me":
     with col1:
         st.subheader('Write for me')
         des=st.text_input(label='Description')
-        submitted = st.form_submit_button('Submit')
+        submitted = st.button('Submit')
     with col2:
         if submitted:
             x = openai(des)
             st.code(x)
+            st.stop()
                 
 elif choose == "Idea Generator":
     with col1:
         st.subheader('Idea Generator')
         des=st.text_input(label='Description')
-        submitted = st.form_submit_button('Submit')
+        submitted = st.button('Submit')
     with col2:
         if submitted:
             x = openai(des)
             st.code(x)
+            st.stop()
+
 
 #     elif choose == "Idea Generator":
 #         with st.form(key="form2"):
