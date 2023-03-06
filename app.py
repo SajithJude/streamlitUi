@@ -68,7 +68,7 @@ col1, col2,= st.columns(2)
 if choose == "Write For Me":
     with col1:
         st.subheader('Write for me')
-        des=st.text_input(label='Description')
+        des=st.text_area(label='Description')
         submitted = st.button('Submit')
     with col2:
         if submitted:
