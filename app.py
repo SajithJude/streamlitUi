@@ -89,19 +89,59 @@ if choose == "Write For Me":
         except:
             st.code("Input something and click submit")
         # st.code(explan)
-            # st.stop()
+            st.stop()
                 
 elif choose == "Idea Generator":
     with col1:
+
         st.subheader('Idea Generator')
-        des=st.text_input(label='Description')
-        submitted = st.button('Submit')
+        des=st.text_area(label='Description',label_visibility='collapsed' )
+        if st.button('Submit'):
+            reply = openai.Completion.create(
+                                        engine="text-davinci-003",
+                                        prompt=des,
+                                        max_tokens=3600,
+                                        n=1,
+                                        stop=None,
+                                        temperature=0.5,
+                                        )
+            idea= reply.choices[0].text.strip()
+            # st.code(explan)
     with col2:
-        if submitted:
-            x = openai(des)
-            st.code(x)
+        st.subheader('Generated OutPuts')
+
+        try:
+            idea= reply.choices[0].text.strip()
+            st.code(idea)
+        except:
+            st.code("Input something and click submit")
+        # st.code(explan)
             st.stop()
 
+
+elif choose == "Promotion Ideas":
+    with col1:
+        st.subheader('Promotion Ideas')
+        des=st.text_area(label='Description',label_visibility='collapsed' )
+        if st.button('Submit'):
+            reply = openai.Completion.create(
+                                        engine="text-davinci-003",
+                                        prompt=des,
+                                        max_tokens=3600,
+                                        n=1,
+                                        stop=None,
+                                        temperature=0.5,
+                                        )
+            explan= reply.choices[0].text.strip()
+            # st.code(explan)
+    with col2:
+        st.subheader('Generated OutPuts')
+
+        try:
+            explan= reply.choices[0].text.strip()
+            st.code(explan)
+        except:
+            st.code("Input something and click submit")
 
 #     elif choose == "Idea Generator":
 #         with st.form(key="form2"):
