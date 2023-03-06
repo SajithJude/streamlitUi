@@ -125,7 +125,7 @@ elif choose == "Promotion Ideas":
     with col1:
         st.subheader('Promotion Ideas')
         string_list = ['OnlyFans mass Message', 'Caption For Instagram Post', 'Reply for a Tweet or Message']
-        selected_option = st.selectbox('Select an option', string_list)
+        selected_option = st.selectbox(string_list)
 # Define the options for the select box
         options = [' That Would arrouse and turn on the guy who is reading it and make him ask for nudes ', ' that Would grab the attention of the person who is reads it and well suits the caption ', ' a sarcastic response']
         des=st.text_area(label='Description',label_visibility='collapsed' ,placeholder='Specify under which context')
