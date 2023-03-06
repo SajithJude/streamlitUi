@@ -1,5 +1,5 @@
 import streamlit as st
-import hydralit_components as hc
+# import hydralit_components as hc
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
 # from streamlit_card import card
