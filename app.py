@@ -129,11 +129,11 @@ elif choose == "Promotion Ideas":
 # Define the options for the select box
         options = [' That Would arrouse and turn on the guy who is reading it and make him ask for nudes ', ' that Would grab the attention of the person who is reads it and well suits the caption ', ' a sarcastic response']
         des=st.text_area(label='Description',label_visibility='collapsed' ,placeholder='Specify under which context')
-        prompt = "Generate a " selected_option + ' ' + string_list[options.index(selected_option)] + ' Under the following context' + user_input
+        promp = "Generate a " + selected_option + ' ' + string_list[options.index(selected_option)] + ' Under the following context' + user_input
         if st.button('Submit'):
             reply = openai.Completion.create(
                                         engine="text-davinci-003",
-                                        prompt=des,
+                                        prompt=str(promp),
                                         max_tokens=3600,
                                         n=1,
                                         stop=None,
