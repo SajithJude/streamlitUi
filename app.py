@@ -82,11 +82,13 @@ if choose == "Write For Me":
             # st.code(explan)
     with col2:
         try:
+            st.subheader('Generated OutPuts')
             explan= reply.choices[0].text.strip()
             st.code(explan)
         except:
-            st.code("Inpu something and click submit")
-        st.code(explan)
+            st.subheader('Generated OutPuts')
+            st.code("Input something and click submit")
+        # st.code(explan)
             # st.stop()
                 
 elif choose == "Idea Generator":
